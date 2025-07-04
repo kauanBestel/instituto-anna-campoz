@@ -150,13 +150,15 @@
     </section>
 
     <!-- Cursos -->
-    <section class="bg-green-200 py-16 px-4">
-      <div
-        class="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
-      >
+    <section class=" py-16 px-4">
+      <div class="max-w-6xl mx-auto text-center">
+        <h1 class="text-3xl md:text-4xl font-bold mb-12">Cursos Profissionalizantes</h1>
+        <div
+          class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
+        >
         <!-- Curso 1 -->
         <div class="flex flex-col items-center text-center">
-          <h3 class="text-lg font-semibold mb-2">Curso 1</h3>
+          <h3 class="text-lg font-semibold mb-2">Manicure</h3>
           <img
             src="./images/6.jpg"
             alt="Curso"
@@ -171,7 +173,7 @@
 
         <!-- Curso 2 -->
         <div class="flex flex-col items-center text-center">
-          <h3 class="text-lg font-semibold mb-2">Curso 2</h3>
+          <h3 class="text-lg font-semibold mb-2">Manicure + Design</h3>
           <img
             src="./images/6.jpg"
             alt="Curso"
@@ -186,7 +188,7 @@
 
         <!-- Curso 3 -->
         <div class="flex flex-col items-center text-center">
-          <h3 class="text-lg font-semibold mb-2">Curso 3</h3>
+          <h3 class="text-lg font-semibold mb-2">Nail art, molde & fibra</h3>
           <img
             src="./images/6.jpg"
             alt="Curso"
@@ -201,7 +203,7 @@
 
         <!-- Curso 4 -->
         <div class="flex flex-col items-center text-center">
-          <h3 class="text-lg font-semibold mb-2">Curso 4</h3>
+          <h3 class="text-lg font-semibold mb-2">Esmaltação em gel</h3>
           <img
             src="./images/6.jpg"
             alt="Curso"
@@ -216,7 +218,7 @@
 
         <!-- Curso 5 -->
         <div class="flex flex-col items-center text-center">
-          <h3 class="text-lg font-semibold mb-2">Curso 5</h3>
+          <h3 class="text-lg font-semibold mb-2">Cílios</h3>
           <img
             src="./images/6.jpg"
             alt="Curso"
@@ -231,7 +233,7 @@
 
         <!-- Curso 6 -->
         <div class="flex flex-col items-center text-center">
-          <h3 class="text-lg font-semibold mb-2">Curso 6</h3>
+          <h3 class="text-lg font-semibold mb-2">Sobrancelha</h3>
           <img
             src="./images/6.jpg"
             alt="Curso"
@@ -245,7 +247,35 @@
         </div>
       </div>
     </section>
+    
 
+<section class="bg-gray-100 flex items-center justify-center px-4">
+
+  <div class="relative bg-white rounded-2xl shadow-xl p-8 max-w-xl w-full text-center">
+
+    <h2 class="text-2xl font-bold text-gray-800 mb-6">O que dizem nossos alunos</h2>
+
+    <!-- Relato -->
+<div id="relato" class="text-gray-700 text-lg min-h-[8rem] transition-all duration-300 ease-in-out px-8 text-left">
+      <!-- Conteúdo será trocado via JS -->
+    </div>
+
+    <!-- Botão Esquerdo -->
+    <button onclick="mudarRelato(-1)" class="absolute left-4 top-1/2 -translate-y-1/2 bg-blue-500 hover:bg-blue-600 text-white p-2 rounded-full shadow-lg">
+      &#8592;
+    </button>
+
+    <!-- Botão Direito -->
+    <button onclick="mudarRelato(1)" class="absolute right-4 top-1/2 -translate-y-1/2 bg-blue-500 hover:bg-blue-600 text-white p-2 rounded-full shadow-lg">
+      &#8594;
+    </button>
+  </div>
+
+
+</section>
+
+
+    
     <footer class="bg-[#3A8A8B] text-white py-8">
       <div class="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 px-4">
         <div>
@@ -292,5 +322,33 @@
         COPYRIGHT © 2025 LOREM IPSUM. TODOS OS DIREITOS RESERVADOS.
       </div>
     </footer>
+    
+  <script>
+    const relatos = [
+  `“O curso me surpreendeu! Aprendi mais em 2 meses aqui do que em anos em outras instituições.”<br><span class="block text-right text-sm text-gray-500 mt-2">- Ana</span>`,
+  `“Os professores são super dedicados e o conteúdo é direto ao ponto. Recomendo demais!”<br><span class="block text-right text-sm text-gray-500 mt-2">- Bruno</span>`,
+  `“Consegui meu primeiro emprego na área graças aos projetos práticos que desenvolvi no curso!”<br><span class="block text-right text-sm text-gray-500 mt-2">- Carla</span>`,
+  `“O suporte da equipe é excelente. Sempre que precisei, fui atendido com atenção.”<br><span class="block text-right text-sm text-gray-500 mt-2">- Diego</span>`,
+  `“A didática é simples, objetiva e transformadora. Amei cada módulo!”<br><span class="block text-right text-sm text-gray-500 mt-2">- Elisa</span>`
+];
+
+
+    let indexAtual = 0;
+    const elementoRelato = document.getElementById("relato");
+
+    function exibirRelato() {
+      elementoRelato.innerHTML = relatos[indexAtual];
+
+    }
+
+    function mudarRelato(direcao) {
+      indexAtual += direcao;
+      if (indexAtual < 0) indexAtual = relatos.length - 1;
+      if (indexAtual >= relatos.length) indexAtual = 0;
+      exibirRelato();
+    }
+
+    exibirRelato();
+  </script>
   </body>
 </html>
